@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration page</title>
+    <style>
+        /* Basic page styling */        
+        body {
+            background-color: lightblue; /* Set background color of the entire page */ 
+        }
+        .form-container { /* Container for fieldset and form elements */
+            width: 500px; /* Form width */
+            margin: 20px auto;
+        }
+        fieldset {  /* Styling for the fieldset element (this groups the form elements) */
+            border: 13px solid pink; /* Pink border around the fieldset */
+            padding: 20px; /* Add padding to the top */
+            padding-bottom: 0; /* Remove bottom padding */
+        }
+        legend { /* Styling for the legend (the title inside the fieldset) */
+            text-align: center; /* Center the title text */
+            font-size: 1.5em; /* Increase font size */
+            margin-bottom: 10px; /* Add space below the title */
+        }
+        .form-elements { /* Container for the form elements */
+            padding: 20px; /* Add padding around the form elements */
+            border-top: none; /* Remove top border */
+            border: 13px solid pink; /* Pink border around the bottom and sides */
+            margin-top: -13px; /* Adjust margin to overlap the fieldset border */
+            box-sizing: border-box; /* Include padding and borders in width calculation */
+        }
+        /* Styling for all labels */
+        label {
+            display: block; /* Make labels block level elements so they take up the whole width */
+            margin-bottom: 5px; /* Add space below each label */
+        }
+        /* Styling for text inputs, email inputs, password inputs, select dropdowns, & textareas */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            width: calc(100% - 10px); /* Full width minus padding */
+            padding: 5px; /* Padding inside the input fields */
+            margin-bottom: 10px; /* Space below the inputs */
+            box-sizing: border-box; /* Include padding & border in the width calculation */
+        }
+         /* Styling for textarea (address input) */
+        textarea {
+            height: 50px; /* Set a fixed height for the textarea */
+        }
+        /* Styling for radio buttons inside the gender group */
+        .gender-group label {
+            display: inline; /* Display gender labels inline */
+            margin-right: 10px; /* Add space between each gender option */
+        }
+        /* Styling for the submit button */
+        button {
+            background-color: green; /* Green background for the button */
+            color: white; /* White text on the button */
+            border: none; /* Remove button border */
+            padding: 10px 20px; /* Add padding inside the button */
+            cursor: pointer; /* Change cursor to pointer when hovering over the button */
+            width: 100%; /* Make the button fill the width of the form */
+        }
+        /* Styling for the phone number container */
+        .phone-container {
+            display: flex; /* Use flexbox to align items horizontally */
+            align-items: center; /* Center items vertically */
+        }
+        /* Styling for the phone number input */
+        .phone-container input[type="tel"] {
+            width: calc(100% - 50px); /* Make the input take up full width minus the space for the country code */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <fieldset>
+            <legend>Student registration form</legend>
+        </fieldset>
+        <div class="form-elements">  <form action="/server">
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="first" placeholder="First name" required>
+
+                <label for="mname">Middle name:</label>
+                <input type="text" id="mname" name="middle" placeholder="Middle name">
+
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="last" placeholder="Last name" required>
+
+                <label for="course">Course:</label>
+                <select name="cs" id="course">
+                    <option>Course</option>
+                    <option value="fyit">FYBScIT</option>
+                    <option value="syit">SYBScIT</option>
+                    <option value="tyit">TYBScIT</option>
+                </select>
+
+                <label for="gen">Gender:</label>
+                <div class="gender-group">
+                    <input type="radio" name="gen" id="male" value="Male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gen" id="female" value="Female">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gen" id="other" value="Other">
+                    <label for="other">Other</label>
+                </div>
+
+                <label for="phone">Phone number:</label>
+                <div class="phone-container">
+                    <span>+91</span>
+                    <input type="tel" id="phone" name="num" maxlength="10" placeholder="10 digits phone number" pattern="[0-9]{10}" required>
+                </div>
+
+                <label for="address">Address:</label>
+                <textarea name="a" id="address" placeholder="Address"></textarea>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email ID" name="e" required>
+
+                <label for="pswd">Password:</label>
+                <input type="password" id="pswd" placeholder="Password" name="password" required>
+
+                <label for="psw">Retype password:</label>
+                <input type="password" id="psw" placeholder="Retype password" name="password" required>
+
+                <button>Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range & textarea</title>
+</head>
+<body>
+    <form action="/server">
+        <div>
+            <label for="vol">Set volume:</label>
+            <input type="range" name="vol" id="vol" min="0" max="100" step="10" value="20">
+        </div>
+        <div>
+            <label for="fb">Please provide your feedback:</label>
+            <textarea name="feedback" id="fb" cols="10" rows="1"></textarea>
+        </div>
+     <br>
+     <button>Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select options from dropdown list</title>
+</head>
+<body>
+    <form action="/server">
+     <div>
+         <label for="uname">Username:</label>
+         <input type="text" id="uname" name="name">
+         <br>
+         <label for="pswd">Password:</label>
+         <input type="password" id="pswd" name="passwd">
+     </div>
+     <br>
+     <div>
+         <select name="course" id="cs">
+             <option>Select your course:</option>
+             <option value="frontend">Frontend development</option>
+             <option value="backend">Backend development</option>
+             <option value="fullstack">Full stack web development</option>
+         </select>
+     </div>
+     <div>
+         <select name="lang" id="prog_lang">
+             <option>Select your favourite programming language:</option>
+             <option value="py">Python</option>
+             <option value="java">Java</option>
+             <option value="js">JavaScript</option>
+         </select>
+     </div>
+     <br>
+     <button>Submit</button>
+    </form>
+</body>
+</html>
